@@ -28,4 +28,16 @@ describe('Counter testing', () => {
   test('t3: render initial value of state in a div', () => {
     expect(wrapper.find('#counter-value').text()).toBe('0');
   });
+
+  test('t4: render the click event of increment button and increment counter value', () => {
+    wrapper.find('#increment-btn').simulate('click');
+    expect(wrapper.find('#counter-value').text()).toBe('1');
+  });
+
+  test('t5: render the click of decrement button and decrement counter value', () => {
+    wrapper.find('#increment-btn').simulate('click');
+    expect(wrapper.find('#counter-value').text()).toBe('1');
+    wrapper.find('#decrement-btn').simulate('click');
+    expect(wrapper.find('#counter-value').text()).toBe('0');
+  });
 });
