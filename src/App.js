@@ -5,6 +5,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>This is a counter app</h1>
+        <button id="increment-btn">Increment</button>
       </header>
     </div>
   );
