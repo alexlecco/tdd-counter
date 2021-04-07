@@ -6,8 +6,12 @@ import App from './App';
 configure({ adapter: new Adapter() });
 
 describe('Counter testing', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+
   test('t1: renders the title of counter', () => {
-    const wrapper = shallow(<App />);
     expect(wrapper.find('h1').text()).toContain(
       'This is a counter app'
     );
@@ -18,7 +22,6 @@ describe('Counter testing', () => {
   });
 
   test('t2: render a button with text of `increment`', () => {
-    const wrapper = shallow(<App />);
     expect(wrapper.find('#increment-btn').text()).toBe('Increment');
   });
 });
